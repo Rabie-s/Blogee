@@ -1,5 +1,5 @@
 
-# Bloge
+# Blogee
 
 A blog system was development using PHP laravel framework.
 
