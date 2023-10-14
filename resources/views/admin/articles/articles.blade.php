@@ -12,7 +12,8 @@
             <div class="overflow-auto rounded-lg shadow drop-shadow-2xl">
 
                 <div class="my-5 space-x-2">
-                    <a href="{{route('articles.create')}}" class="py-2 px-3 text-white  bg-blue-600 hover:bg-blue-700 rounded text-lg">Add article</a>
+                    <a href="{{ route('articles.create') }}"
+                        class="py-2 px-3 text-white  bg-blue-600 hover:bg-blue-700 rounded text-lg">Add article</a>
                 </div>
 
                 <table class="text-black w-full ">
@@ -36,8 +37,10 @@
                                 <td class="text-base p-2 mb-5 whitespace-nowrap">{{ $article->category->name }}</td>
                                 <td class="text-base p-2 mb-5 whitespace-nowrap">{{ $article->user->name }}</td>
                                 <td class="space-x-3 whitespace-nowrap">
-                                    <a href='{{route('articles.edit',$article->id)}}' class="text-blue-700 hover:text-blue-600">Edit</a>
-                                    <form class="inline" action="{{route('articles.destroy',$article->id)}}" method="post">
+                                    <a href='{{ route('articles.edit', $article->id) }}'
+                                        class="text-blue-700 hover:text-blue-600">Edit</a>
+                                    <form class="inline" action="{{ route('articles.destroy', $article->id) }}"
+                                        method="post">
                                         @method('DELETE')
                                         @csrf
                                         <button class="text-red-700 hover:text-red-600" type="submit">Delete</button>
@@ -48,6 +51,9 @@
                     </tbody>
 
                 </table>
+            </div>
+            <div class="my-1">
+                {{ $articles->links() }}
             </div>
 
         </div>

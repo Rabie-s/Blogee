@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.categories.categories',['categories'=>Category::all()]);
+        return view('admin.categories.categories',['categories'=>Category::latest()->paginate(8)]);
     }
 
     /**

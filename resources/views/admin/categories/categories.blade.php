@@ -43,6 +43,9 @@
 
                 </table>
             </div>
+            <div class="my-1">
+                {{$categories->links()}}
+            </div>
 
         </div>
     </div>

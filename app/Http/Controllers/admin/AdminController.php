@@ -13,7 +13,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.admins.admins', ['users' => User::all()]);
+        return view('admin.admins.admins', ['users' => User::latest()->paginate(8)]);
     }
 
     /**
